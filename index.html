@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <dialog class="new-book-pop" id="new-book-pop">
+            <h2>Add a new book to the list:</h2>
+            <form class="new-book-form">   
+                <div class="grid-form">
+                    <label for="title">Title: </label>
+                    <input required type="text" name="title" id="title">
+                    <label for="author">Author: </label>
+                    <input required type="text" name="author" id="author">
+                    <label for="pages">Pages: </label>
+                    <input required type="number" name="pages" id="pages">
+                    <label for="read">Read: </label>
+                    <input type="checkbox" name="read" id="read">
+                </div>
+                <button autofocus id="add-book-button" type="submit">Add this book</button>
+                <p>[Hit escape to cancel]</p>
+            </form>
+    </dialog>
+    
+    <div class="grid-wrapper">
+        <div class="white-box">
+            <h1 class="box-heading">Welcome to my Library App</h1>
+            <p class="box-text">Currently available books:</p>
+            <div class="box-output" id="box-output">
+                <ul id="box-list"></ul>
+            </div>
+            <button class="new-book-button" id="new-book-button">Add New Book</button>
+        </div>
+    </div>
+      
+</body>
+</html>

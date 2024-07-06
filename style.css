@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before {
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    position: relative;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.new-book-pop {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+}
+
+.new-book-pop > h2 {
+    margin-bottom: 20px;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.grid-form > input,
+.grid-form > label {
+    margin: 5px 0px;
+}
+
+#read {
+    justify-self: start;
+}
+
+#add-book-button {
+    margin: 20px 0px;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.dialog-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.white-box {
+    justify-content: center;
+    background-color: white;
+    width: 1000px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.box-heading {
+    text-align: center;
+}
+
+.box-text {
+    padding: 20px 0px;
+}
+
+.box-output {
+    font-style: italic;
+}
+
+#box-list > li {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.new-book-button {
+    padding: 5px 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+::backdrop {
+    background-image: linear-gradient(
+      45deg,
+      magenta,
+      rebeccapurple,
+      dodgerblue,
+      green
+    );
+    opacity: 0.75;
+}
+  
