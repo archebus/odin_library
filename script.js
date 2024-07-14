@@ -10,23 +10,41 @@ const authorInput = document.getElementById("author");
 const pagesInput = document.getElementById("pages");
 const readInput = document.getElementById("read");
 
-//Book constructor
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    get info() {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "has been read." : "not read yet."}`;
+    }
+
+    get toggleRead() {
+        this.read = !this.read;
+    }
+
+};
+
+/* //Book constructor
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-}
+} */
 
-//Add info method to Book prototype
+/* //Add info method to Book prototype
 Book.prototype.info = function() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "has been read." : "not read yet."}`;
-}
+} */
 
 //Add toggleRead method to Book prototype
-Book.prototype.toggleRead = function() {
+/* Book.prototype.toggleRead = function() {
     this.read = !this.read;
-}
+} */
 
 //Initial Array
 let books = [
@@ -42,7 +60,7 @@ function updateBookList() {
     bookList.innerHTML = ""; // Clear the current list
     books.forEach((book, index) => {
         let li = document.createElement("li");
-        li.innerHTML = `${book.info()} 
+        li.innerHTML = `${book.info} 
             <button class="delete-button" data-index="${index}">Delete</button>
             <button class="toggle-read-button" data-index="${index}">${book.read ? "Mark as Unread" : "Mark as Read"}</button>`;
         bookList.appendChild(li);
@@ -63,7 +81,7 @@ function updateBookList() {
     toggleReadButtons.forEach(button => {
         button.addEventListener("click", (event) => {
             const index = event.target.getAttribute("data-index");
-            books[index].toggleRead();
+            books[index].toggleRead;
             updateBookList();
         });
     });
